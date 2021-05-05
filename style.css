@@ -20,6 +20,10 @@ header {
     align-items: center;
     z-index: 999;
 }
+header.stikcy {
+    background: crimson;
+    padding: 10px 100px;
+}
 header .brand {
     color: #fff;
     font-size: 32px;
@@ -39,8 +43,9 @@ header .navigation a {
     transition: .5s ease;
 }
 header .navigation a:hover {
-    color: crimson;
+    color: #666;
 }
+
 section {
     padding: 100px;
 }
@@ -395,6 +400,243 @@ section {
     text-align: center;
     transition: transform .5s ease;
 }
-.contact .card .contact-icon:hover {
+.contact .card:hover .contact-icon {
     transform: translateY(-10px);
+}
+.contact .card .info h3 {
+    color: #111;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px;
+    text-align: center;
+}
+.contact .card .info span {
+    color: #666;
+    font-weight: 500;
+}
+.contact-form {
+    background: #fff;
+    max-width: 600px;
+    margin-top: 50px;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(1 1 1 /15%);
+}
+.contact-form h3 {
+    color: #111;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.contact-form .input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.contact-form .input-box input,
+.contact-form .input-box textarea {
+    color: #111;
+    width: 100%;
+    padding: 10px;
+    font-size: 17px;
+    font-weight: 400;
+    outline: none;
+    border: 1px solid #111;
+    border-radius: 5px;
+    resize: none;
+}
+.contact-form .input-box .send-btn {
+    color: #fff;
+    background: crimson;
+    display: inline-block;
+    font-size: 19px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.contact-form .input-box .send-btn:hover {
+    color: #000;
+    background: #fff;
+    border: 1px solid #111;
+}
+                 /* FOOTER */
+
+.footer {
+    background: #000016;
+    color: #fff;
+    text-align: center;
+    padding: 34px;
+}
+.footer .footer-title {
+    font-size: 20px;
+    font-weight: 600;
+
+}
+.footer p {
+    margin-top: 10px;
+}
+
+/* Media */
+
+@media (max-width: 1049px) {
+    header {
+        padding: 12px 20px;
+    }
+
+    header.stikcy {
+        padding: 10px 20px;
+    }
+
+    header .brand {
+        padding-right: 300px;
+    }
+
+    header .navigation {
+        display: none;
+    }
+
+    header .navigation.active {
+        z-index: 888;
+        position: fixed;
+        background: #fff;
+        top: 0;
+        right: 0;
+        width: 380px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 5px 25px rgba(1 1 1 /15%);
+        transition: .3s ease;
+    }
+
+    header .navigation a {
+        color: #000;
+        font-size: 22px;
+        margin: 10px;
+        padding: 0 20px;
+        border-radius: 20px;
+    }
+
+    header .navigation a:hover {
+        background: crimson;
+        color: #fff;
+    }
+
+    .menu-btn {
+        position: absolute;
+        background: url(/images/menu.png) no-repeat;
+        background-size: 30px;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        right: 0;
+        margin: 0 20px;
+        cursor: pointer;
+        transition: .4s ease;
+    }
+
+    .menu-btn.active {
+        z-index: 999;
+        background: url(./images/close.png) no-repeat;
+        background-size: 25px;
+        background-position: center;
+        transition: .3s ease;
+        filter: invert(1);
+    }
+
+    section {
+        padding: 80px 20px;
+    }
+
+    .main .content h2 {
+        font-size: 25px;
+    }
+
+    .main .content h3 {
+        font-size: 30px;
+    }
+
+    .main .content h2 span {
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    .about .content {
+        flex-direction: column;
+    }
+
+    .about .content .column {
+        position: relative;
+        width: 100%;
+    }
+
+    .about .content .col-right {
+        margin-top: 40px;
+    }
+
+    .about .content .col-right h2 {
+        font-size: 25px;
+    }
+
+    .skills .content {
+        flex-direction: column;
+    }
+
+    .skills .content .column {
+        position: relative;
+        width: 100%;
+    }
+
+    .skills .content .col-right {
+        margin-top: 40px;
+    }
+
+    .contact-form {
+        padding: 35px 40px;
+    }
+}
+
+.scrollToTop-btn {
+    z-index: 999;
+    position: fixed;
+    background: crimson;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    right: 0;
+    bottom: 10px;
+    font-size: 22px;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.scrollToTop-btn.active {
+    right: 20px;
+    opacity: 1;
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 1.3s ease;
+}
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
 }
